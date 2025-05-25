@@ -1,15 +1,15 @@
-import { MUI } from "../mui"
+import {MUI} from "../mui"
 
 declare module "@mui/material/styles" {
   interface Palette {
     appHeader: MUI.PaletteColor
-    surface: { rug: string }
-    foreground: { muted: string }
+    surface: {rug: string}
+    foreground: {muted: string}
   }
   interface PaletteOptions {
     appHeader?: MUI.PaletteColorOptions
-    surface?: { rug?: string }
-    foreground?: { muted?: string }
+    surface?: {rug?: string}
+    foreground?: {muted?: string}
   }
   interface BreakpointOverrides {
     mobile: true
@@ -25,7 +25,7 @@ declare module "@mui/material/AppBar" {
   }
 }
 
-export const ThemeProvider = ({ children }: { children: React.ReactNode }) => {
+export const ThemeProvider = ({children}: {children: React.ReactNode}) => {
   const palette: MUI.PaletteOptions = {
     mode: "light",
     appHeader: {
@@ -52,9 +52,9 @@ export const ThemeProvider = ({ children }: { children: React.ReactNode }) => {
       light: MUI.lighten("#F9302C", 0.3),
       dark: MUI.darken("#F9302C", 0.3),
     },
-    text: { primary: "#444", secondary: "#00000099" },
-    surface: { rug: "#F0F1F2" },
-    foreground: { muted: "#00000099" },
+    text: {primary: "#444", secondary: "#00000099"},
+    surface: {rug: "#F0F1F2"},
+    foreground: {muted: "#00000099"},
   } as const
 
   const typography = {
@@ -92,7 +92,7 @@ export const ThemeProvider = ({ children }: { children: React.ReactNode }) => {
   }
 
   const breakpoints = {
-    values: { xs: 0, sm: 600, md: 900, lg: 1200, xl: 1536, mobile: 350, bigMobile: 450, tablet: 650, desktop: 900 },
+    values: {xs: 0, sm: 600, md: 900, lg: 1200, xl: 1536, mobile: 350, bigMobile: 450, tablet: 650, desktop: 900},
   }
 
   const themeOptions: MUI.ThemeOptions = {
@@ -102,23 +102,23 @@ export const ThemeProvider = ({ children }: { children: React.ReactNode }) => {
     components: {
       MuiButton: {
         styleOverrides: {
-          root: { textTransform: "none", whiteSpace: "nowrap" },
-          outlined: ({ theme }) => ({ fontWeight: "bold", borderColor: theme.palette.divider }),
-          colorInherit: ({ theme }) => ({ color: theme.palette.text.secondary }),
+          root: {textTransform: "none", whiteSpace: "nowrap"},
+          outlined: ({theme}) => ({fontWeight: "bold", borderColor: theme.palette.divider}),
+          colorInherit: ({theme}) => ({color: theme.palette.text.secondary}),
         },
       },
-      MuiTab: { styleOverrides: { root: { fontWeight: "bold" } } },
-      MuiListItem: { styleOverrides: { padding: { padding: "4px 4px" } } },
-      MuiListItemButton: { styleOverrides: { root: { padding: "4px 4px" } } },
-      MuiListItemAvatar: { styleOverrides: { root: { minWidth: 56, display: "flex", justifyContent: "center" } } },
-      MuiListItemIcon: { styleOverrides: { root: { minWidth: 56, display: "flex", justifyContent: "center" } } },
+      MuiTab: {styleOverrides: {root: {fontWeight: "bold"}}},
+      MuiListItem: {styleOverrides: {padding: {padding: "4px 4px"}}},
+      MuiListItemButton: {styleOverrides: {root: {padding: "4px 4px"}}},
+      MuiListItemAvatar: {styleOverrides: {root: {minWidth: 56, display: "flex", justifyContent: "center"}}},
+      MuiListItemIcon: {styleOverrides: {root: {minWidth: 56, display: "flex", justifyContent: "center"}}},
       MuiListItemText: {
         styleOverrides: {
-          primary: { whiteSpace: "nowrap", fontSize: "0.9rem", fontWeight: "bold" },
-          secondary: { whiteSpace: "nowrap", fontSize: "0.8rem" },
+          primary: {whiteSpace: "nowrap", fontSize: "0.9rem", fontWeight: "bold"},
+          secondary: {whiteSpace: "nowrap", fontSize: "0.8rem"},
         },
       },
-      MuiDialog: { styleOverrides: { paper: { borderRadius: 6, padding: 20 } } },
+      MuiDialog: {styleOverrides: {paper: {borderRadius: 6, padding: 20}}},
     },
   }
 
